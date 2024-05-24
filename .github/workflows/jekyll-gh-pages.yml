@@ -2,6 +2,8 @@
 name: Deploy Jekyll with GitHub Pages dependencies preinstalled
 
 on:
+theme: jekyll-theme-minimal
+title: 荣耀之冕
   # Runs on pushes targeting the default branch
   push:
     branches: ["main"]
