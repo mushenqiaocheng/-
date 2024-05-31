@@ -9,21 +9,31 @@
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
-            background-color: #f2f2f2;
+            background-color: #ffffff;
         }
 
-        .container {
+        .section {
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
+            flex-direction: column;
+        }
+
+        .buttons-section {
+            background-color: #ffffff;
+        }
+
+        .docs-section {
+            background-color: white;
         }
 
         button {
-            padding: 10px 20px;
-            margin: 0 10px;
+            width: 200px;
+            padding: 15px 0;
+            margin: 10px;
             font-size: 16px;
-            background-color: #4CAF50;
+            background-color: #af4c4c;
             color: white;
             border: none;
             border-radius: 5px;
@@ -32,18 +42,19 @@
         }
 
         button:hover {
-            background-color: #45a049;
+            background-color:#af4c4c;
         }
 
         .content-div {
             position: fixed;
-            top: 0;
+            top: 10%;
             left: 10000px; /* Initially off-screen */
             width: 15%;
-            height: 40%;
+            height: 60%;
             background-color: white;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             transition: left 0.5s ease;
+            overflow-y: auto;
         }
 
         table {
@@ -59,7 +70,7 @@
         }
 
         th {
-            background-color: #4CAF50;
+            background-color: #af4c4c;
             color: white;
         }
 
@@ -68,77 +79,111 @@
             width: 100%;
             height: calc(100vh - 40px); /* Adjust for button height */
         }
+
+        img {
+            width: 150px;
+            margin-bottom: 20px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .visible {
+            display: block;
+        }
     </style>
 </head>
 <body>
-    <div class="container">
+    <div id="buttonsSection" class="section buttons-section">
+        <iframe  src="https://docs.google.com/document/d/1vO9kr1qkVCPn99bgKEsIpQkZA3IvBPznaIHnbgSKGyA/preview" height: "50px"></iframe>
+
         <button id="englishButton">English</button>
         <button id="chineseButton">中文</button>
     </div>
 
-    <div id="englishDiv" class="content-div">
-        <table>
-            <tr><th>List</th></tr>
-            <tr><td>1</td></tr>
-            <tr><td>2</td></tr>
-            <tr><td>3</td></tr>
-            <tr><td>4</td></tr>
-            <tr><td>5</td></tr>
-            <tr><td>6</td></tr>
-            <tr><td>7</td></tr>
-            <tr><td>8</td></tr>
-            <tr><td>9</td></tr>
-            <tr><td>10</td></tr>
-        </table>
-    </div>
+    <div id="docsSection" class="section docs-section hidden">
+        <div id="englishDiv" class="content-div">
+            <table>
+                <tr><th>List</th></tr>
+                <tr><td><a href="#bookmark1" target="englishFrame">1. People</a></td></tr>
+                <tr><td><a href="#bookmark2" target="englishFrame">2. Example</a></td></tr>
+                <tr><td><a href="#bookmark3" target="englishFrame">3. Another</a></td></tr>
+                <tr><td><a href="#bookmark4" target="englishFrame">4. Sample</a></td></tr>
+                <tr><td><a href="#bookmark5" target="englishFrame">5. Text</a></td></tr>
+                <tr><td><a href="#bookmark6" target="englishFrame">6. Data</a></td></tr>
+                <tr><td><a href="#bookmark7" target="englishFrame">7. Info</a></td></tr>
+                <tr><td><a href="#bookmark8" target="englishFrame">8. Details</a></td></tr>
+                <tr><td><a href="#bookmark9" target="englishFrame">9. Content</a></td></tr>
+                <tr><td><a href="#bookmark10" target="englishFrame">10. Item</a></td></tr>
+            </table>
+        </div>
 
-    <div id="chineseDiv" class="content-div">
-        <table>
-            <tr><th>列表</th></tr>
-            <tr><td>1</td></tr>
-            <tr><td>2</td></tr>
-            <tr><td>3</td></tr>
-            <tr><td>4</td></tr>
-            <tr><td>5</td></tr>
-            <tr><td>6</td></tr>
-            <tr><td>7</td></tr>
-            <tr><td>8</td></tr>
-            <tr><td>9</td></tr>
-            <tr><td>10</td></tr>
-        </table>
-    </div>
+        <div id="chineseDiv" class="content-div">
+            <table>
+                <tr><th>列表</th></tr>
+                <tr><td><a href="https://docs.google.com/document/d/19zIfkALRHzGEYvV7FyAtqo0x4M3kRXfN0UNkU7QT0mo/preview#bookmark=id.w4u4iv3dcset" target="chineseFrame">工程表</a></td></tr>
+                <tr><td><a href="https://docs.google.com/document/d/19zIfkALRHzGEYvV7FyAtqo0x4M3kRXfN0UNkU7QT0mo/preview#bookmark=id.hnyztuy0mgq4" target="chineseFrame">游戏设定</a></td></tr>
+                <tr><td><a href="https://docs.google.com/document/d/19zIfkALRHzGEYvV7FyAtqo0x4M3kRXfN0UNkU7QT0mo/preview#bookmark=id.8w5f8atym69" target="chineseFrame">游戏玩法</a></td></tr>
+                <tr><td><a href="https://docs.google.com/document/d/19zIfkALRHzGEYvV7FyAtqo0x4M3kRXfN0UNkU7QT0mo/preview#bookmark=id.9bflxlijqud4" target="chineseFrame">段位系统</a></td></tr>
+                <tr><td><a href="https://docs.google.com/document/d/19zIfkALRHzGEYvV7FyAtqo0x4M3kRXfN0UNkU7QT0mo/preview#bookmark=id.8f0d9xgr0bhs" target="chineseFrame">游戏模式</a></td></tr>
+                <tr><td><a href="https://docs.google.com/document/d/19zIfkALRHzGEYvV7FyAtqo0x4M3kRXfN0UNkU7QT0mo/preview#bookmark=id.9ee8m23q3q5 target="chineseFrame">5V5团队战</a></td></tr>
+                <tr><td><a href="https://docs.google.com/document/d/19zIfkALRHzGEYvV7FyAtqo0x4M3kRXfN0UNkU7QT0mo/preview#bookmark=id.ndcpkmjzxcca" target="chineseFrame">8人单人组淘汰赛</a></td></tr>
+                <tr><td><a href="https://docs.google.com/document/d/19zIfkALRHzGEYvV7FyAtqo0x4M3kRXfN0UNkU7QT0mo/preview#bookmark=id.820rtnmgcd1" target="chineseFrame">角色</a></td></tr>
+                <tr><td><a href="https://docs.google.com/document/d/19zIfkALRHzGEYvV7FyAtqo0x4M3kRXfN0UNkU7QT0mo/preview#bookmark=id.ma3dxay1ici5" target="chineseFrame">莫久</a></td></tr>
+                <tr><td><a href="https://docs.google.com/document/d/19zIfkALRHzGEYvV7FyAtqo0x4M3kRXfN0UNkU7QT0mo/preview#bookmark=id.b2bde4bvigt7" target="chineseFrame">键位</a></td></tr>
+            </table>
+        </div>
 
-    <div id="docsContainer">
-        <iframe id="englishFrame" src="https://docs.google.com/document/d/1i3WCUloEDIltKmi6Qe9_nIhsnj5NVTkGUgMaiNRGAbI/preview" style="display: none;"></iframe>
-        <iframe id="chineseFrame" src="https://docs.google.com/document/d/19zIfkALRHzGEYvV7FyAtqo0x4M3kRXfN0UNkU7QT0mo/preview" style="display: none;"></iframe>
+        <iframe id="englishFrame" src="https://docs.google.com/document/d/1i3WCUloEDIltKmi6Qe9_nIhsnj5NVTkGUgMaiNRGAbI/preview" class="hidden"></iframe>
+        <iframe id="chineseFrame" src="https://docs.google.com/document/d/19zIfkALRHzGEYvV7FyAtqo0x4M3kRXfN0UNkU7QT0mo/preview" class="hidden"></iframe>
     </div>
 
     <script>
         document.getElementById("englishButton").addEventListener("click", function() {
+            document.getElementById("buttonsSection").classList.add("hidden");
+            document.getElementById("docsSection").classList.remove("hidden");
             document.getElementById("englishDiv").style.left = "0";
             document.getElementById("chineseDiv").style.left = "10000px";
-            document.getElementById("englishFrame").style.display = "block";
-            document.getElementById("chineseFrame").style.display = "none";
-            setTimeout(function() {
-                window.scrollTo({
-                    top: document.getElementById("englishFrame").offsetTop,
-                    behavior: 'smooth'
-                });
-            }, 500); // Wait for the transition to finish
+            document.getElementById("englishFrame").classList.remove("hidden");
+            document.getElementById("chineseFrame").classList.add("hidden");
         });
-
+    
         document.getElementById("chineseButton").addEventListener("click", function() {
+            document.getElementById("buttonsSection").classList.add("hidden");
+            document.getElementById("docsSection").classList.remove("hidden");
             document.getElementById("englishDiv").style.left = "10000px";
             document.getElementById("chineseDiv").style.left = "0";
-            document.getElementById("englishFrame").style.display = "none";
-            document.getElementById("chineseFrame").style.display = "block";
-            setTimeout(function() {
-                window.scrollTo({
-                    top: document.getElementById("chineseFrame").offsetTop,
-                    behavior: 'smooth'
-                });
-            }, 500); // Wait for the transition to finish
+            document.getElementById("englishFrame").classList.add("hidden");
+            document.getElementById("chineseFrame").classList.remove("hidden");
+        });
+    
+        // Function to change iframe source based on clicked link
+        function changeIframeSource(link, frameId) {
+            var iframe = document.getElementById(frameId);
+            iframe.src = link;
+        }
+    
+        // Adding event listeners to English and Chinese list items
+        var englishListItems = document.querySelectorAll("#englishDiv table a");
+        englishListItems.forEach(function(item) {
+            item.addEventListener("click", function(event) {
+                event.preventDefault(); // Preventing default link behavior
+                var link = item.getAttribute("href");
+                changeIframeSource(link, "englishFrame");
+            });
+        });
+    
+        var chineseListItems = document.querySelectorAll("#chineseDiv table a");
+        chineseListItems.forEach(function(item) {
+            item.addEventListener("click", function(event) {
+                event.preventDefault(); // Preventing default link behavior
+                var link = item.getAttribute("href");
+                changeIframeSource(link, "chineseFrame");
+            });
         });
     </script>
+    
+    
 </body>
 </html>
