@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>荣耀之冕</title>
     <style>
+
+
+*{cursor:url(cursor.cur),default; }
+
         body {
             margin: 0;
             padding: 0;
@@ -95,6 +99,7 @@
     </style>
 </head>
 <body>
+
     <div id="buttonsSection" class="section buttons-section">
         <iframe  src="https://docs.google.com/document/d/1vO9kr1qkVCPn99bgKEsIpQkZA3IvBPznaIHnbgSKGyA/preview" height: "50px"></iframe>
 
@@ -139,12 +144,23 @@
         <iframe id="chineseFrame" src="https://docs.google.com/document/d/19zIfkALRHzGEYvV7FyAtqo0x4M3kRXfN0UNkU7QT0mo/preview" class="hidden"></iframe>
     </div>
 
+
+
+
     <script>
         document.getElementById("englishButton").addEventListener("click", function() {
             document.getElementById("buttonsSection").classList.add("hidden");
             document.getElementById("docsSection").classList.remove("hidden");
+            if (window.innerWidth>620){
+            document.getElementById("englishDiv").classList.remove("hidden");
+            document.getElementById("chineseDiv").classList.remove("hidden");
             document.getElementById("englishDiv").style.left = "0";
             document.getElementById("chineseDiv").style.left = "10000px";
+        }else{
+            document.getElementById("englishDiv").classList.add("hidden");
+            document.getElementById("chineseDiv").classList.add("hidden");
+        }
+
             document.getElementById("englishFrame").classList.remove("hidden");
             document.getElementById("chineseFrame").classList.add("hidden");
         });
@@ -152,8 +168,15 @@
         document.getElementById("chineseButton").addEventListener("click", function() {
             document.getElementById("buttonsSection").classList.add("hidden");
             document.getElementById("docsSection").classList.remove("hidden");
+            if (window.innerWidth>620){
+            document.getElementById("englishDiv").classList.remove("hidden");
+            document.getElementById("chineseDiv").classList.remove("hidden");
             document.getElementById("englishDiv").style.left = "10000px";
             document.getElementById("chineseDiv").style.left = "0";
+        }else{
+            document.getElementById("englishDiv").classList.add("hidden");
+            document.getElementById("chineseDiv").classList.add("hidden");
+        }
             document.getElementById("englishFrame").classList.add("hidden");
             document.getElementById("chineseFrame").classList.remove("hidden");
         });
@@ -182,6 +205,9 @@
                 changeIframeSource(link, "chineseFrame");
             });
         });
+   
+
+
     </script>
     
     
